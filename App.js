@@ -1,17 +1,30 @@
 import * as React from 'react';
 import { StyleSheet, Text, ScrollView, View } from 'react-native';
-import { Avatar, Accessory, ListItem, Badge, Icon, withBadge, BottomSheet, Button, Divider } from 'react-native-elements'
+import { Avatar, Accessory, ListItem, Badge, Icon, withBadge, BottomSheet, Button, Divider, Header } from 'react-native-elements'
 
 import BG from './BG'
 import BGComponents from './BGComponents'
 import Cards from './Cards'
 import Checkboxes from './Checkboxes'
+import Icons from './Icons'
+import Inputs from './Inputs'
+import ListItems from './ListItems'
+import Ratings from './Ratings'
+import SocialIcons from './SocialIcons'
 
 export default function App() {
   const BadgedIcon = withBadge(1)(Icon)
 
   return (
     <ScrollView style={styles.container}>
+      <Header
+        placement="center"
+        barStyle="light-content"
+        leftComponent={{icon: 'menu', color: '#fff'}}
+        // rightContainerStyle={{borderWidth: 3}}
+        centerComponent={{ text: 'BRAND', style: {color: '#fff'}}}
+        rightComponent={{ icon: 'home', color: '#fff' }}
+      />
       <Text>Avatars</Text>
       <Avatar
         rounded
@@ -157,6 +170,11 @@ export default function App() {
       <Cards />
       <Divider style={{marginVertical: 10, backgroundColor: 'blue', height: 2, marginHorizontal: '10%'}}/>
       <Checkboxes />
+      <Icons />
+      <Inputs />
+      <ListItems />
+      <Ratings />
+      <SocialIcons />
     </ScrollView>
   );
 }
@@ -165,6 +183,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    borderWidth: 2,
+    // borderWidth: 2,
   },
 });
